@@ -1,0 +1,645 @@
+/* General Styling */
+/* Общие стили для страницы */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: black;
+  padding-top: calc(20vh + 20px); /* Компенсация для header (20vh) и nav (3px) */
+}
+
+
+
+
+
+
+/* Контейнер для header */
+.header-container {
+  position: fixed; /* Фиксируем header в верхней части экрана */
+  top: 0; /* Привязываем к верхнему краю окна */
+  left: 0;
+  width: 100%; /* Контейнер на всю ширину экрана */
+  height: 25vh; /* Высота контейнера 20% от высоты экрана */
+  background-color: white; /* Белый фон для header */
+  z-index: 99; /* Устанавливаем высокий z-index для перекрытия других элементов */
+  overflow: hidden; /* Обрезаем изображение, если оно выходит за пределы блока */
+}
+
+/* Header изображение */
+.header-block {
+  position: relative; /* Относительное позиционирование внутри контейнера */
+  width: 100%; /* Ширина блока на весь контейнер */
+  height: 100%; /* Высота блока равна высоте контейнера */
+  display: flex;
+  justify-content: center; /* Центрируем изображение горизонтально */
+  align-items: center; /* Центрируем изображение вертикально */
+  box-sizing: border-box;
+  overflow: hidden;
+
+}
+
+.header-image {
+  width: 120%; /* Картинка занимает всю ширину блока */
+  height: auto; /* Сохраняем пропорции изображения */
+  object-fit: cover; /* Масштабируем изображение без обрезки */
+  transform: scale(2); /* Увеличиваем масштаб картинки */
+  display: block;
+}
+
+
+/* Заголовок с изображением */
+header .header-image {
+  width: 20%;  /* Уменьшаем ширину изображения до 80% от доступной ширины */
+  max-width: 100%;  /* Ограничиваем максимальную ширину картинки */
+  height: auto;  /* Высота автоматически подстраивается для сохранения пропорций */
+  object-fit: contain;  /* Масштабируем изображение, сохраняя пропорции, не выходя за границы */
+  margin: 0 auto;  /* Центрируем картинку по горизонтали */
+  display: block;  /* Убираем возможные пробелы под изображением */
+}
+
+/* Панель навигации */
+nav {
+  position: fixed; /* Закрепляем навигацию в верхней части экрана */
+  top: 17.5vh; /* Убираем отступ, блоки теперь впритык */
+  left: 0; /* Отступ слева */
+  width: 100%; /* Растягиваем на всю ширину экрана */
+  height: 3px; /* Устанавливаем высоту блока навигации */
+  background-color: white; /* Белый фон для навигации */
+  color: #d9c7b6; /* Бежевый цвет текста */
+  text-align: center;
+  padding: 0; /* Убираем внутренние отступы */
+  margin: 0; /* Убираем внешние отступы */
+  margin-top: 27px;
+  z-index: 95; /* Навигация поверх других элементов */
+}
+
+/* Ссылки навигации */
+nav a {
+  font-family: 'Calibri', sans-serif; /* Современный шрифт */
+  text-decoration: none; /* Убираем подчеркивание */
+  color: #A6A6A6 ; /* Цвет текста — светло-серый */
+  font-size: 17px; /* Увеличиваем размер шрифта */
+  font-weight: 500; /* Увеличиваем вес шрифта для жирности */
+  padding: 0 20px; /* Увеличиваем отступы вокруг текста для раздвижки */
+  margin: 0; /* Убираем маргины */
+  line-height: 1.5; /* Увеличиваем высоту строки для лучшего восприятия */
+  display: inline-block; /* Правильное выравнивание */
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  list-style: none;
+  background-color: white;
+}
+
+/* Эффект наведения на ссылки */
+nav a:hover {
+  color: #b3541e; /* Цвет текста при наведении */
+}
+
+
+
+
+
+  
+}
+
+.about-content {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.about-content img {
+  width: 200px;
+  border-radius: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+footer a img {
+  width: 30px;
+  margin: 0 10px;
+}
+
+footer p {
+  color: #AAA;
+}
+
+
+
+
+
+
+
+
+
+#portfolio {
+  padding: 20px;
+  text-align: center;
+  margin-top: 40px; /* Регулируйте значение по необходимости */
+
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Два столбца на экран */
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.portfolio-column {
+  display: flex;
+  flex-direction: column; /* Колонка с вертикальным расположением элементов */
+  gap: 30px; /* Равные отступы между изображениями */
+}
+
+.portfolio-item {
+  break-inside: avoid; /* Избегаем разрыва внутри элементов */
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  cursor: pointer;
+  transform: scale(1); /* Уменьшаем картинку на 20% */
+
+}
+
+
+/* Добавляем фаску и тень ко всем иллюстрациям */
+.portfolio-item img,
+.gallery-item img,
+.book-item img,
+.illustration-item img {
+    border-radius: 5px; /* Небольшая фаска */
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2)); /* Тень только под видимой частью */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавный переход */
+}
+
+/* Дополнительный эффект при наведении */
+.portfolio-item img:hover,
+.gallery-item img:hover,
+
+.illustration-item img:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Чуть более заметная тень */
+}
+
+
+
+
+/* Стили для изображения */
+.portfolio-item img {
+  opacity: 0;
+  transition: transform 0.3s ease;
+  animation: fadeInPortfolio 0.5s ease-out forwards;
+
+}
+
+.portfolio-item img:hover {
+  transform: scale(1.03);
+ 
+}
+
+@keyframes fadeInPortfolio {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Для картинок из первого столбца (первая, третья, пятая и т.д.) */
+.portfolio-column:first-child .portfolio-item:nth-child(1) img {
+  animation-delay: 0.3s;
+}
+
+.portfolio-column:first-child .portfolio-item:nth-child(2) img {
+  animation-delay: 0.6s;
+}
+
+.portfolio-column:first-child .portfolio-item:nth-child(3) img {
+  animation-delay: 1.2s;
+}
+
+.portfolio-column:first-child .portfolio-item:nth-child(4) img {
+  animation-delay: 1.8s;
+}
+
+.portfolio-column:first-child .portfolio-item:nth-child(5) img {
+  animation-delay: 2.4s;
+}
+
+/* Для картинок из второго столбца (вторая, четвертая, шестая и т.д.) */
+.portfolio-column:nth-child(2) .portfolio-item:nth-child(1) img {
+  animation-delay: 0.6s;
+}
+
+.portfolio-column:nth-child(2) .portfolio-item:nth-child(2) img {
+  animation-delay: 0.9s;
+}
+
+.portfolio-column:nth-child(2) .portfolio-item:nth-child(3) img {
+  animation-delay: 1.5s;
+}
+
+.portfolio-column:nth-child(2) .portfolio-item:nth-child(4) img {
+  animation-delay: 2.1s;
+}
+
+.portfolio-column:nth-child(2) .portfolio-item:nth-child(5) img {
+  animation-delay: 2.7s;
+}
+
+
+
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr; /* Один столбец */
+  }
+
+  nav ul {
+    flex-direction: column; /* Вертикальный список меню */
+    gap: 10px;
+  }
+
+  .header-container {
+    padding: 10px;
+  }
+}
+
+
+
+
+
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 1005; /* Сделаем его выше, чем для header и nav */
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+  margin: 20px;
+  transition: transform 0.3s ease;
+}
+
+.modal-open header,
+.modal-open nav {
+  z-index: 1;  /* Понижаем z-index для header и nav */
+}
+
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #ddd;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+/* Для страницы book1 добавим анимацию появления */
+.book1 {
+    opacity: 0; /* Скрываем контейнер по умолчанию */
+    animation: fadeInContent 1.5s ease-out forwards; /* Анимация появления */
+}
+
+@keyframes fadeInContent {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Плавное появление для всех элементов внутри book1 */
+.book-content,
+.book-illustrations,
+.modal {
+    opacity: 0;
+    animation: fadeInContent 0.3s ease-out forwards;
+    animation-delay: 0.3s; /* Задержка появления */
+}
+
+.book-content {
+    animation-delay: 0.3s;
+}
+
+.book-illustrations {
+    animation-delay: 0.3s;
+}
+
+.modal {
+    animation-delay: 0.3s;
+}
+
+/* Плавное изменение цвета для Coming 2024 */
+.book-description {
+    font-size: 14px; /* Размер шрифта */
+    font-weight: 300; /* Сделать шрифт тоньше */
+    color: #4a4a4a; /* Темно-серый цвет вместо бежевого */
+    text-align: center; /* Центрирование текста (если нужно) */
+    margin-top: 10px; /* Регулировка отступов */
+    transition: color 0.5s ease; /* Плавный переход цвета */
+}
+
+.book-description:hover {
+    color: #333; /* Темнее при наведении */
+}
+
+
+
+/* Плавное появление для всех элементов внутри about-content */
+.about-content {
+    opacity: 0;
+    animation: fadeInContent 0.3s ease-out forwards;
+    animation-delay: 0.3s; /* Задержка появления */
+}
+
+
+
+
+
+
+
+
+
+.books {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Высота 100% экрана */
+  padding: 20px;
+  margin-top: 10px; /* Отступ сверху от панели навигации */
+}
+
+.book-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 столбца */
+  grid-template-rows: repeat(2, 1fr); /* 2 строки одинаковой высоты */
+  gap: 20px; /* Расстояние между карточками */
+  width: 80%; /* Ограничиваем ширину сетки */
+}
+
+/* Карточка книги */
+.book-item {
+  background: none; /* Убираем любой фоновый цвет */
+  border: none; /* Убираем рамку */
+  box-shadow: none; /* Убираем тень */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Выравнивание по низу */
+  align-items: center;
+  text-align: center;
+  height: 300px; /* Фиксированная высота карточки */
+  text-decoration: none; /* Убираем подчеркивание */
+  color: inherit; /* Сохраняем цвет текста */
+  opacity: 0; /* Изначально скрыта */
+  animation: fadeIn 0.8s forwards; /* Анимация */
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Эффект увеличения при наведении */
+.book-item:hover img {
+  transform: scale(1.1); /* Увеличиваем карточку */
+  filter: drop-shadow(0 5px 13px rgba(0, 0, 0, 0.3)); /* Увеличенная тень при наведении */
+
+}
+
+.book-item img {
+  display: block; /* Убираем возможные пробелы снизу */
+  width: 100%; /* Растягиваем на всю ширину родительского контейнера */
+  height: auto; /* Сохраняем пропорции */
+  border: none; /* Убираем рамку у изображений */
+  box-shadow: none; /* Убираем тень у изображений */
+  background: none; /* Убираем фоновый цвет */
+  max-width: 100%; /* Ограничиваем ширину изображения */
+  max-height: 80%; /* Ограничиваем высоту изображения */
+  object-fit: contain; /* Сохраняем пропорции изображения */
+  transition: transform 0.3s ease;
+
+}
+
+.book-item p {
+  margin-top: 10px;
+  font-size: 18px;
+  font-family: 'Poppins', sans-serif; /* Шрифт для текста */
+  font-weight: 300; /* Тонкий стиль */
+  color: #ff7f00; /* Оранжевый цвет текста */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Стиль для страницы book1 */
+.book-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 50px; /* Регулируйте значение по необходимости */
+
+}
+
+.book-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 40%; /* Уменьшаем ширину текста */
+}
+
+.book-title {
+    font-size: 36px; /* Размер шрифта */
+    color: #b3541e; /* Темно-оранжевый цвет */
+    font-family: 'Georgia', 'Times New Roman', serif; /* Элегантный шрифт */
+    font-weight: 500; /* Полужирный, но не слишком тяжелый */
+    margin-bottom: 15px; /* Отступ снизу */
+    text-align: center; /* Название книги в центре */
+}
+
+/* Стили для ссылки "Buy the Book here" */
+.buy-link {
+    text-decoration: underline; /* Убираем стандартное подчеркивание */
+    color: black; /* Цвет ссылки по умолчанию */
+    transition: color 0.5s ease, text-decoration 0.3s ease; /* Плавное изменение цвета и подчеркивания */
+}
+
+/* Стили для наведения на ссылку */
+.buy-link:hover {
+    color: orange; /* Цвет текста при наведении */
+    text-decoration: underline; /* Подчеркивание текста при наведении */
+}
+
+
+.book-description {
+    font-size: 14px; /* Уменьшение размера шрифта */
+  font-weight: 300; /* Сделать шрифт тоньше */
+  color: #4a4a4a; /* Темно-серый цвет вместо бежевого */
+  text-align: center; /* Центрирование текста (если нужно) */
+  margin-top: 10px; /* Регулировка отступов */
+}
+
+.book-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.book-image img {
+    max-width: 70%;
+    height: auto;
+    border-radius: 10px; /* Небольшая фаска */
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2)); /* Тень только под видимой частью */
+    background: transparent; /* На всякий случай убираем фон */
+    display: block;
+}
+
+.book-illustrations {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.illustrations-gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.illustration-item img {
+    width: 450px;  /* Увеличиваем ширину */
+    height: auto;  /* Сохраняем пропорции */
+    transition: transform 0.3s ease;
+}
+
+.illustration-item:hover img {
+    transform: scale(1.05); /* Плавное увеличение при наведении */
+}
+
+
+
+/* Контейнер с контентом */
+.about-content {
+  display: flex;
+  align-items: center; /* Центрируем по вертикали */
+  justify-content: center;
+  margin: 0 auto;
+  padding: 2rem;
+  width: 100%; /* Растягиваем фон на всю ширину экрана */
+  background-color: white; /* Белый фон */
+  max-width: 1200px; /* Ограничиваем ширину содержимого */
+  box-sizing: border-box; /* Учитываем padding в общей ширине */
+  margin-top: 25px; /* Регулируйте значение по необходимости */
+
+}
+
+/* Фото в блоке .about-content */
+.about-content img {
+  flex: 1;
+  max-width: 35%; /* Занимает половину экрана */
+  height: auto;
+  object-fit: contain; /* Избегаем искажений */
+  margin-right: 2rem; /* Отступ справа от фото */
+  border-radius: 10px; /* Красивая обводка */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px; /* Небольшая фаска */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Мини тень */
+
+}
+
+/* Параграф в блоке .about-content */
+.about-content p {
+  flex: 1;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.about-content p span {
+  display: block;
+  font-size: 36px; /* Размер шрифта */
+    color: #b3541e; /* Темно-оранжевый цвет */
+    font-family: 'Georgia', 'Times New Roman', serif; /* Элегантный шрифт */
+    font-weight: 500; /* Полужирный, но не слишком тяжелый */
+}
+
+.about-content a {
+  text-decoration: none; /* Убираем подчеркивание */
+  color: #0077cc; /* Цвет ссылок */
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.about-content a:hover {
+  color: #005a99; /* Цвет при наведении */
+}
+
+.about-content a.email-link {
+  text-decoration: underline; /* Подчеркивание для email */
+  color: black;
+}
+
+
