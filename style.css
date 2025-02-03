@@ -62,7 +62,7 @@ header .header-image {
 /* Панель навигации */
 nav {
   position: fixed; /* Закрепляем навигацию в верхней части экрана */
-  top: 17.5vh; /* Убираем отступ, блоки теперь впритык */
+  top: 25vh; /* Опускаем панель ниже (уменьшаем значение, если нужно больше) */
   left: 0; /* Отступ слева */
   width: 100%; /* Растягиваем на всю ширину экрана */
   height: 3px; /* Устанавливаем высоту блока навигации */
@@ -71,7 +71,6 @@ nav {
   text-align: center;
   padding: 0; /* Убираем внутренние отступы */
   margin: 0; /* Убираем внешние отступы */
-  margin-top: 27px;
   z-index: 95; /* Навигация поверх других элементов */
 }
 
@@ -79,7 +78,7 @@ nav {
 nav a {
   font-family: 'Calibri', sans-serif; /* Современный шрифт */
   text-decoration: none; /* Убираем подчеркивание */
-  color: #A6A6A6 ; /* Цвет текста — светло-серый */
+  color: #A6A6A6; /* Цвет текста — светло-серый */
   font-size: 17px; /* Увеличиваем размер шрифта */
   font-weight: 500; /* Увеличиваем вес шрифта для жирности */
   padding: 0 20px; /* Увеличиваем отступы вокруг текста для раздвижки */
@@ -89,11 +88,14 @@ nav a {
 }
 
 nav ul {
-  display: flex;
-  justify-content: center;
+  display: flex; /* Настроим флекс-блок */
+  justify-content: center; /* Центрируем элементы */
   padding: 10px 0;
   list-style: none;
   background-color: white;
+  margin: 0; /* Убираем отступы */
+  width: 100%; /* Ширина на весь экран */
+  flex-wrap: nowrap; /* Запрещаем перенос */
 }
 
 /* Эффект наведения на ссылки */
@@ -101,8 +103,38 @@ nav a:hover {
   color: #b3541e; /* Цвет текста при наведении */
 }
 
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 768px) {
+  body {
+    padding: 0; /* Убираем отступы в теле */
+    margin: 0; /* Убираем внешние отступы в теле */
+  }
 
+  nav {
+    top: 26vh; /* Сильно опускаем панель ниже на мобильных устройствах */
+  }
 
+  nav ul {
+    display: flex; /* Убедимся, что флекс контейнер */
+    flex-direction: row !important; /* Принудительно горизонтальное расположение */
+    justify-content: center; /* Центрируем ссылки */
+    width: 100%; /* Обеспечиваем полную ширину */
+  }
+
+  nav a {
+    font-size: 16px; /* Уменьшаем размер шрифта для мобильных устройств */
+    padding: 0 15px; /* Уменьшаем отступы */
+  }
+
+  /* Для контента на мобильных устройствах */
+  main {
+    margin-top: 33vh; /* Увеличиваем отступ для контента, чтобы он не перекрывался */
+  }
+}
+/* Плавный переход для контента */
+main {
+  transition: margin-top 0.3s ease;
+}
 
 
   
@@ -419,7 +451,7 @@ footer p {
   box-shadow: none; /* Убираем тень */
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* Выравнивание по низу */
+  justify-content: space-between; /* Выравнивание по низу */
   align-items: center;
   text-align: center;
   height: 300px; /* Фиксированная высота карточки */
@@ -427,6 +459,34 @@ footer p {
   color: inherit; /* Сохраняем цвет текста */
   opacity: 0; /* Изначально скрыта */
   animation: fadeIn 0.8s forwards; /* Анимация */
+}
+
+
+/* Для мобильных устройств на странице books */
+@media (max-width: 768px) {
+  .books-page {
+    margin-top: 195vh; /* Добавляем отступ только на мобильных устройствах */
+  }
+}
+/* Для мобильных устройств (меньше 768px) */
+@media (max-width: 768px) {
+  .book-gallery {
+    display: block; /* Меняем на блочное расположение */
+  }
+
+  .book-item {
+    margin-bottom: 20px; /* Отступ между книгами */
+    display: block; /* Каждая книга будет отображаться как блок */
+    width: 100%; /* Занимает всю ширину */
+  }
+
+  /* Переход к одному столбцу для каждой книги */
+  .book-gallery a {
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение внутри ссылки */
+    align-items: center; /* Центрируем изображения и текст */
+    text-align: center; /* Центрируем текст */
+  }
 }
 
 /* Анимация появления */
@@ -462,7 +522,7 @@ footer p {
 
 .book-item p {
   margin-top: 10px;
-  font-size: 18px;
+  font-size: 16px;
   font-family: 'Poppins', sans-serif; /* Шрифт для текста */
   font-weight: 300; /* Тонкий стиль */
   color: #ff7f00; /* Оранжевый цвет текста */
@@ -593,7 +653,7 @@ footer p {
   background-color: white; /* Белый фон */
   max-width: 1200px; /* Ограничиваем ширину содержимого */
   box-sizing: border-box; /* Учитываем padding в общей ширине */
-  margin-top: 25px; /* Регулируйте значение по необходимости */
+  margin-top: 35px; /* Регулируйте значение по необходимости */
 
 }
 
@@ -620,7 +680,7 @@ footer p {
 
 .about-content p span {
   display: block;
-  font-size: 36px; /* Размер шрифта */
+  font-size: 30px; /* Размер шрифта */
     color: #b3541e; /* Темно-оранжевый цвет */
     font-family: 'Georgia', 'Times New Roman', serif; /* Элегантный шрифт */
     font-weight: 500; /* Полужирный, но не слишком тяжелый */
