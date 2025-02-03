@@ -12,10 +12,6 @@ document.querySelectorAll('nav a').forEach(link => {
   });
 });
 
-
-
-
-
 // Ожидаем, когда вся страница загрузится
 document.addEventListener("DOMContentLoaded", function() {
   // Селекторы для изображений на страницах portfolio и book1
@@ -23,13 +19,16 @@ document.addEventListener("DOMContentLoaded", function() {
   const modal = document.getElementById('imageModal');
   const modalImage = document.getElementById('modalImage');
   const closeModal = document.getElementById('closeModal');
+  
+  let currentIndex = 0; // Индекс текущего изображения
 
   // Открытие модального окна при клике на изображение
-  images.forEach(image => {
+  images.forEach((image, index) => {
     image.addEventListener('click', function(event) {
       event.preventDefault();  // Отменяем стандартное поведение (если это ссылка)
       modal.style.display = 'flex';  // Показываем модальное окно
       modalImage.src = image.src;   // Устанавливаем src картинки в модальном окне
+      currentIndex = index;  // Сохраняем индекс выбранного изображения
     });
   });
 
@@ -44,7 +43,19 @@ document.addEventListener("DOMContentLoaded", function() {
       modal.style.display = 'none';
     }
   });
+
+  // Переключение изображений с помощью стрелок на клавиатуре
+  document.addEventListener('keydown', (event) => {
+    if (modal.style.display === 'flex') {
+      if (event.key === 'ArrowLeft') {
+        // Переключить на предыдущее изображение
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        modalImage.src = images[currentIndex].src;
+      } else if (event.key === 'ArrowRight') {
+        // Переключить на следующее изображение
+        currentIndex = (currentIndex + 1) % images.length;
+        modalImage.src = images[currentIndex].src;
+      }
+    }
+  });
 });
-
-
-

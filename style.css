@@ -138,17 +138,70 @@ main {
 
 
   
-}
-
+/* Контейнер с контентом */
 .about-content {
   display: flex;
-  gap: 20px;
-  padding: 20px;
+  align-items: center; /* Центрируем по вертикали */
+  justify-content: center;
+  margin: 0 auto;
+  padding: 2rem;
+  width: 100%; /* Растягиваем фон на всю ширину экрана */
+  background-color: white; /* Белый фон */
+  max-width: 1200px; /* Ограничиваем ширину содержимого */
+  box-sizing: border-box; /* Учитываем padding в общей ширине */
+  margin-top: 35px; /* Регулируйте значение по необходимости */
+
 }
 
+/* Фото в блоке .about-content */
 .about-content img {
-  width: 200px;
-  border-radius: 10px;
+  flex: 1;
+  max-width: 35%; /* Занимает половину экрана */
+  height: auto;
+  object-fit: contain; /* Избегаем искажений */
+  margin-right: 2rem; /* Отступ справа от фото */
+  border-radius: 10px; /* Красивая обводка */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px; /* Небольшая фаска */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Мини тень */
+
+}
+
+/* Параграф в блоке .about-content */
+.about-content p {
+  flex: 1;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.about-content p span {
+  display: block;
+  font-size: 30px; /* Размер шрифта */
+    color: #b3541e; /* Темно-оранжевый цвет */
+    font-family: 'Georgia', 'Times New Roman', serif; /* Элегантный шрифт */
+    font-weight: 500; /* Полужирный, но не слишком тяжелый */
+}
+
+.about-content a {
+  text-decoration: none; /* Убираем подчеркивание */
+  color: #0077cc; /* Цвет ссылок */
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.about-content a:hover {
+  color: #005a99; /* Цвет при наведении */
+}
+
+.about-content a.email-link {
+  text-decoration: underline; /* Подчеркивание для email */
+  color: black;
+}
+
+@media (min-width: 1024px) {
+  .about-content img {
+    max-width: 45%; /* Или больше, в зависимости от потребностей */
+  }
 }
 
 footer {
@@ -623,6 +676,18 @@ footer p {
     text-align: center;
 }
 
+/* Медиазапрос для мобильных устройств */
+@media (max-width: 767px) {
+  /* Уменьшаем размер заголовка и описания для мобильных устройств */
+  .book-title {
+    font-size: 20px;  /* Уменьшаем заголовок */
+  }
+
+  .book-description {
+    font-size: 14px;  /* Уменьшаем описание */
+  }
+
+
 .illustrations-gallery {
     display: flex;
     justify-content: center;
@@ -642,64 +707,5 @@ footer p {
 
 
 
-/* Контейнер с контентом */
-.about-content {
-  display: flex;
-  align-items: center; /* Центрируем по вертикали */
-  justify-content: center;
-  margin: 0 auto;
-  padding: 2rem;
-  width: 100%; /* Растягиваем фон на всю ширину экрана */
-  background-color: white; /* Белый фон */
-  max-width: 1200px; /* Ограничиваем ширину содержимого */
-  box-sizing: border-box; /* Учитываем padding в общей ширине */
-  margin-top: 35px; /* Регулируйте значение по необходимости */
-
-}
-
-/* Фото в блоке .about-content */
-.about-content img {
-  flex: 1;
-  max-width: 35%; /* Занимает половину экрана */
-  height: auto;
-  object-fit: contain; /* Избегаем искажений */
-  margin-right: 2rem; /* Отступ справа от фото */
-  border-radius: 10px; /* Красивая обводка */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px; /* Небольшая фаска */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Мини тень */
-
-}
-
-/* Параграф в блоке .about-content */
-.about-content p {
-  flex: 1;
-  font-size: 1rem;
-  line-height: 1.8;
-}
-
-.about-content p span {
-  display: block;
-  font-size: 30px; /* Размер шрифта */
-    color: #b3541e; /* Темно-оранжевый цвет */
-    font-family: 'Georgia', 'Times New Roman', serif; /* Элегантный шрифт */
-    font-weight: 500; /* Полужирный, но не слишком тяжелый */
-}
-
-.about-content a {
-  text-decoration: none; /* Убираем подчеркивание */
-  color: #0077cc; /* Цвет ссылок */
-  margin-bottom: 0.5rem;
-  display: block;
-}
-
-.about-content a:hover {
-  color: #005a99; /* Цвет при наведении */
-}
-
-.about-content a.email-link {
-  text-decoration: underline; /* Подчеркивание для email */
-  color: black;
-}
 
 
