@@ -687,7 +687,7 @@ footer p {
     font-size: 14px;  /* Уменьшаем описание */
   }
 
-
+}
 .illustrations-gallery {
     display: flex;
     justify-content: center;
@@ -696,7 +696,7 @@ footer p {
 }
 
 .illustration-item img {
-    width: 450px;  /* Увеличиваем ширину */
+    width: 60%;  /* Увеличиваем ширину */
     height: auto;  /* Сохраняем пропорции */
     transition: transform 0.3s ease;
 }
