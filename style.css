@@ -10,6 +10,31 @@ body {
   padding-top: calc(20vh + 20px); /* Компенсация для header (20vh) и nav (3px) */
 }
 
+header, nav {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  transition: opacity 0.3s ease, visibility 0.2s ease;
+}
+
+header {
+  top: 0;
+  left: 0;
+}
+
+nav {
+  top: 60px; /* Навигация под header */
+  left: 0;
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -25,6 +50,7 @@ body {
   background-color: white; /* Белый фон для header */
   z-index: 99; /* Устанавливаем высокий z-index для перекрытия других элементов */
   overflow: hidden; /* Обрезаем изображение, если оно выходит за пределы блока */
+
 }
 
 /* Header изображение */
