@@ -181,23 +181,23 @@ main {
 
 /* Фото в блоке .about-content */
 .about-content img {
-  flex: 1;
-  max-width: 35%; /* Занимает половину экрана */
+  flex: none; /* Убираем автоматическое растяжение */
+  width: 35%; /* Фиксированная ширина */
+  max-width: 300px; /* Доп. ограничение */
   height: auto;
   object-fit: contain; /* Избегаем искажений */
   margin-right: 2rem; /* Отступ справа от фото */
   border-radius: 10px; /* Красивая обводка */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px; /* Небольшая фаска */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Мини тень */
-
 }
 
-/* Параграф в блоке .about-content */
 .about-content p {
   flex: 1;
   font-size: 1rem;
   line-height: 1.8;
+  text-align: justify;
+  width: 100%;
+  max-width: 600px; /* Настроить под нужный размер */
 }
 
 .about-content p span {
@@ -206,6 +206,7 @@ main {
     color: #b3541e; /* Темно-оранжевый цвет */
     font-family: 'Georgia', 'Times New Roman', serif; /* Элегантный шрифт */
     font-weight: 500; /* Полужирный, но не слишком тяжелый */
+
 }
 
 .about-content a {
