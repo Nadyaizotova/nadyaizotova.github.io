@@ -167,7 +167,7 @@ main {
 /* Контейнер с контентом */
 .about-content {
   display: flex;
-  align-items: center; /* Центрируем по вертикали */
+  align-items: flex-start; /* Центрируем по вертикали */
   justify-content: center;
   margin: 0 auto;
   padding: 2rem;
@@ -193,27 +193,33 @@ main {
 
 .about-content p {
   flex: 1;
-  font-size: 1rem;
-  line-height: 1.8;
+  font-size: 0.9rem;          /* было 1rem → стало чуть меньше */
+  line-height: 1.7;
   text-align: justify;
   width: 100%;
-  max-width: 600px; /* Настроить под нужный размер */
+  max-width: 600px;
+  margin-top: 0;
+  padding-top: 0;
+  font-family: 'Calibri', 'Helvetica Neue', Arial, sans-serif; /* чуть более лёгкий шрифт */
 }
 
 .about-content p span {
   display: block;
-  font-size: 30px; /* Размер шрифта */
+  font-size: 20px; /* Размер шрифта */
     color: #b3541e; /* Темно-оранжевый цвет */
     font-family: 'Georgia', 'Times New Roman', serif; /* Элегантный шрифт */
     font-weight: 500; /* Полужирный, но не слишком тяжелый */
+    line-height: 1.2;     /* уменьшаем межстрочный интервал */
+    margin: 0;
+    padding: 0;
 
 }
 
 .about-content a {
-  text-decoration: none; /* Убираем подчеркивание */
-  color: #0077cc; /* Цвет ссылок */
-  margin-bottom: 0.5rem;
-  display: block;
+  text-decoration: none;
+  color: #0077cc;
+  display: inline;          /* теперь в одну строку */
+  margin-bottom: 0;
 }
 
 .about-content a:hover {
